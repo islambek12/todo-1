@@ -1,18 +1,24 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>TODO</title>
-        <link rel="stylesheet" href="{% static 'styles/index.css' %}" />
-        <link rel="stylesheet" href="{% static 'styles/checkbox.css' %}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO</title>
     </head>
 <body>
-    <h2>This test page...</h2>
-    {{ todo_list }}
+    <br>
+    <h2>BooksShop Marketplace</h2>
+    <br>
     {% for todo in todo_list %}
-    <h3>{{ todo.text }} - {{ todo.created_at }}</h3>
+        <h3>{{ todo.text }}</h3>
     {% endfor %}
+</body>
+</html>
+
+
+</head>
+<body>
+    
 </body>
 </html>
