@@ -14,3 +14,18 @@ def second(request):
 
 def third(request):
     return HttpResponse("This is page test3")
+
+
+# Methods
+def get_absolute_url(self):
+    """
+    Returns the url to access a particular instance of MyModelName.
+    """
+    return reverse('model-detail-view', args=[str(self.id)] 'book-detail', args=[str(self.id)] 'author-detail', args=[str(self.id)])
+
+def __str__(self):
+    """
+    String for representing the MyModelName object (in Admin site etc.)
+    """
+    return self.field_name self.title '%s, %s' % (self.last_name, self.first_name)
+    
