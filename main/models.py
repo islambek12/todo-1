@@ -57,7 +57,7 @@ class Author(models.Model):
     date_of_death = models.DateField('Died', null=True, blank=True)
 
 class Entry(models.Model):
-    blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
+    blog = models.ForeignKey(Book, on_delete=models.CASCADE)
     headline = models.CharField(max_length=255)
     body_text = models.TextField()
     pub_date = models.DateField()
@@ -66,4 +66,4 @@ class Entry(models.Model):
     number_of_comments = models.IntegerField()
     number_of_pingbacks = models.IntegerField()
     rating = models.IntegerField()
-    Entry.objects.all()[:3]
+    
