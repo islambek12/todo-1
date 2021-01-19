@@ -13,7 +13,7 @@ class ToDo(models.Model):
         verbose_name_plural = 'Задачи'
 
 
-class BooksShop(models.Model):
+class Books(models.Model):
     title = models.CharField(max_length=60, verbose_name='Заголовок')
     subtitle = models.CharField(max_length=50, verbose_name='Подзаголовок')
     description = models.CharField(max_length=650, verbose_name='Описание')
