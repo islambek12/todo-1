@@ -17,7 +17,7 @@ def third(request):
     return HttpResponse("This is page test3")
 
 
-def books(request):
+def booksShop(request):
     book_list = BooksShop.objects.all()
     return render(request, "books.html", {"book_list": book_list})
 
