@@ -10,13 +10,8 @@
     <br>
     <h2>BooksShop Marketplace</h2>
     <br>
-    {% for todo in todo_list %}
-        <hr>
-        <!-- <h3>{{ todo.text }}</h3> -->
-        <p>{{ todo.title }}</p>
-        <p>{{ todo.description }}</p>
-        <p>{{ todo.genge }}</p>
-        <br>
+    {% for book in book_list %}
+        <h3>{{ book.title }} - {{ book.description }} - {{ book.genge }}</h3>
     {% endfor %}
 </body>
 </html>
