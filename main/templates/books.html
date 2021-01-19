@@ -10,8 +10,13 @@
     <br>
     <h2>BooksShop Marketplace</h2>
     <br>
-    {% for todo in todo_list %}
-        <h3>{{ todo.text }} - Entry.objects.all()[:3]</h3>
+    {% for book in book_list %}
+        <hr>
+        <!-- <h3>{{ todo.text }}</h3> -->
+        <p>{{ boom.title }}</p>
+        <p>{{ book.description }}</p>
+        <p>{{ boom.genge }}</p>
+        <br>
     {% endfor %}
 </body>
 </html>
