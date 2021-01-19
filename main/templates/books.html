@@ -8,13 +8,13 @@
     </head>
 <body>
     <br>
-    <h2>BooksShop Marketplace</h2>
+    <!-- <h2>BooksShop Marketplace</h2> -->
     <br>
     {% for book in book_list %}
         <hr>
         <p>{{ book.title }}</p>
+        <p>{{ book.subtitle }}</p>
         <p>{{ book.description }}</p>
-        <p>{{ book.genge }}</p>
         <br>
     {% endfor %}
 </body>
