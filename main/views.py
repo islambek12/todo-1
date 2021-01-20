@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from .models import ToDo
 from .models import ToDo, BooksShop
 
@@ -20,6 +20,15 @@ def third(request):
 def booksShop(request):
     book_list = BooksShop.objects.all()
     return render(request, "books.html", {"book_list": book_list})
+
+
+def add_todo(request):
+    form = request.POST
+    text = form["todo_text"]    # print(form)
+    todo = ToDo(text=text)      # print(text)
+    todo.save()
+    return redirect(test)       # HttpResponse("Forma poluchena")
+
 
 
 # def __str__(self):
