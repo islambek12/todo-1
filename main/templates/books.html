@@ -8,6 +8,18 @@
     </head>
 <body>
     <br>
+    <div class="create_container">
+        <form action="{% url 'books' %}" method="POST">
+            {% csrf_token %} <!-- eto trebovanie bezopasnosti django -->
+          <input
+              class="create_input"
+              type="text"
+              placeholder="Введите название книги"
+              name="todo_text" 
+          />
+          <button class="create_button">Добaвить</button>
+        </form>
+      </div>
     <!-- <h2>BooksShop Marketplace</h2> -->
     <br>
     {% for book in book_list %}

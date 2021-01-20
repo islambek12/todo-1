@@ -1,6 +1,6 @@
 from django.shortcuts import render, HttpResponse, redirect
 from .models import ToDo
-from .models import ToDo, BooksShop
+from .models import ToDo, BooksShop, redirect
 
 # Create your views here.
 def homepage(request):
