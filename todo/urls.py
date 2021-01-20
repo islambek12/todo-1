@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from main.views import *    # zvevdochka pokazyvaet chto vse importiruem s view (homepage, test, second, third, booksShop, add_todo) 
+# from main.views import homepage, test, second, third, booksShop, add_todo
+from main.views import *
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -26,8 +27,9 @@ urlpatterns = [
     path("test/", test, name="test"),
     path("test2/", second),
     path("test3/", third),
-    path("books/", booksShop, name="books"),
+    path("books/", booksShop),
     path("add-todo/", add_todo, name="add-todo"),
+    path('add-book/', add_book, name='add-book'),
 ]   + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     

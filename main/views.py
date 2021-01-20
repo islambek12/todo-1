@@ -30,6 +30,20 @@ def add_todo(request):
     return redirect(test)       # HttpResponse("Forma poluchena")
 
 
+def add_book(request):
+    return render(request, 'add_books.html')
+
+
+def book_add(request):
+    form = request.POST
+    booksShop = BooksShop(title=form['book-title'], subtitle=form['book-subtitle'],
+                         description=form['book-description'], price=form['book-price'],
+                         genre=form['book-genre'], author=form['book-author'], year=form['book-year'])
+    booksShop.save()
+
+    return redirect(booksShop)
+
+
 
 # def __str__(self):
 #     return self.name
