@@ -30,7 +30,7 @@ urlpatterns = [
     path("books/", booksShop),
     path("add-todo/", add_todo, name="add-todo"),
     path('add-books/', add_books, name='add-books'),
-    path('book-add/', book_add, name='book-add-on-the-site'),
+    path('book-add', book_add, name='book-add-on-the-site'),
 ]   + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     
