@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from main.views import * # zvevdochka pokazyvaet chto vse importiruem s view (homepage, test, second, third, booksShop, add_todo) 
+from main.views import *    # zvevdochka pokazyvaet chto vse importiruem s view (homepage, test, second, third, booksShop, add_todo) 
 from django.conf import settings
 from django.conf.urls.static import static
 
