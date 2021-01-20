@@ -30,7 +30,7 @@ def add_todo(request):
     return redirect(test)       # HttpResponse("Forma poluchena")
 
 
-def add_book(request):
+def add_books(request):
     return render(request, 'add_books.html')
 
 
