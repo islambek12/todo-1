@@ -21,9 +21,10 @@ class BookShop(models.Model):
     price = models.IntegerField(verbose_name='Цена')
     genre = models.CharField(max_length=60, verbose_name='Жанр')
     author = models.CharField(max_length=35, verbose_name='Автор')
+    is_favorite = models.BooleanField(default=False, verbose_name='Избранная')
     year = models.DateTimeField(verbose_name='Год выпуска книги')
     date = models.DateField(auto_now_add=True, verbose_name='Добавление книги на сайт')
-    is_favorite = models.BooleanField(default=False, verbose_name='Избранная')
+    
 
     class Meta:
         verbose_name = 'Книжный магазин'
