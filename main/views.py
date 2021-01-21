@@ -1,5 +1,4 @@
 from django.shortcuts import render, HttpResponse, redirect
-from .models import ToDo
 from .models import ToDo, BooksShop
 
 # Create your views here.
