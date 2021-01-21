@@ -30,6 +30,12 @@ def add_todo(request):
     return redirect(test)       # HttpResponse("Forma poluchena")
 
 
+def delete_todo(request, id):
+    todo = ToDo.objects.get(id=id)
+    todo.delete()
+    return redirect(test)
+
+
 def add_books(request):
     return render(request, 'add_books.html')
 
