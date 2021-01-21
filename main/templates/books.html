@@ -23,7 +23,8 @@
                         <p>Подзаголовок: {{ book.subtitle }}</p>
                         <p>Описание: {{ book.description }}</p>
                         <a href="{% url 'delete-book' book.id %}" class="btn btn-danger">Удалить</a>
-                        <a href="{% url 'favorite-book' book.id %}" class="btn btn-warning">Избранное</a>        
+                        <a href="{% url 'favorite-book' book.id %}" class="btn btn-warning">Избранное</a>
+                        <a href="{% url 'info-book' book.id %}" class="btn btn-info">Посмотреть детали книги</a>        
                     </div>
             <br>
         {% endfor %}

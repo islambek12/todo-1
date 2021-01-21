@@ -55,19 +55,19 @@ def add_books(request):
 
 def book_add(request):
     form = request.POST
-    bookshop = BookShop(title=form['book-title'], subtitle=form['book-subtitle'],
+    books = BookShop(title=form['book-title'], subtitle=form['book-subtitle'],
                          description=form['book-description'], price=form['book-price'],
                          genre=form['book-genre'], author=form['book-author'], year=form['book-year'])
-    bookshop.save()
+    books.save()
 
-    return redirect(bookshop)
+    return redirect(books)
 
 
 def delete_book(request, id):
     book = BookShop.objects.get(id=id)
     book.delete()
 
-    return redirect(bookShop)
+    return redirect(books)
 
 
 def favorite_book(request, id):
@@ -77,7 +77,19 @@ def favorite_book(request, id):
     else:
         book.is_favorite = True
     book.save()
-    return redirect(bookShop)
+    return redirect(books)
+
+
+def book_info(request, id):
+    book = BookShop.objects.get(id=id)
+    return render(request, 'books_detail.html', {'book': book})
+
+
+def close_todo(request, id):
+    todo = ToDo.objects.get(id=id)
+    todo.is_closed = not todo.is_closed
+    todo.save()
+    return redirect(test)
 
 
 

@@ -40,6 +40,15 @@ section{
     box-shadow: 2px 2px 5px 3px #fce4ec;
 }
 
+.main-page {
+    border: 1px solid black;
+    text-decoration: none;
+    color: white;
+    padding: 4px;
+    border-radius: 0.25rem;
+    background-color: black;
+  }
+
 .todo_container{
     padding: 30px 20px;
     display: flex;
@@ -86,6 +95,11 @@ section{
     font-size: 18px;
     font-family: sans-serif;
 }
+
+.todo-item-header h4 a {
+    text-decoration: none;
+  }
+
 .todo_item_footer{
     display: flex;
     justify-content: space-between;
