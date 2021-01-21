@@ -36,6 +36,20 @@ def delete_todo(request, id):
     return redirect(test)
 
 
+def mark_todo(request, id):
+    todo = ToDo.objects.get(id=id)
+    todo.is_favorite = True
+    todo.save()
+    return redirect(test)
+
+
+def unmark_todo(request, id):
+    todo = ToDo.objects.get(id=id)
+    todo.is_favorite = False
+    todo.save()
+    return redirect(test)
+
+
 def add_books(request):
     return render(request, 'add_books.html')
 
@@ -48,6 +62,24 @@ def book_add(request):
     booksShop.save()
 
     return redirect(booksShop)
+
+
+def delete_book(request, id):
+    book = BooksShop.objects.get(id=id)
+    book.delete()
+
+    return redirect(booksShop)
+
+
+def favorite_book(request, id):
+    book = BooksShop.objects.get(id=id)
+    if book.is_favorite:
+        book.is_favorite = False
+    else:
+        book.is_favorite = True
+    book.save()
+    return redirect(booksShop)
+
 
 
 
