@@ -36,8 +36,8 @@ urlpatterns = [
     path('book-add', book_add, name='book-add-on-the-site'),
     path('delete-book/<id>/', delete_book, name='delete-book'),
     path('favorite-book/<id>/', favorite_book, name='favorite-book'),
-    path('book-info/<id>/', book_info, name='info-book'),
-    path('close-todo/<id>/', close_todo, name='close-todo')
+    path('book-info/<id>/', book_info, name='book-info'),
+    path('close-todo/<id>/', close_todo, name='close-todo'),
 ]   + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     
