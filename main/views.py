@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse, redirect
-from .models import ToDo, BooksShop
+from .models import ToDo, BookShop
 
 # Create your views here.
 def homepage(request):
@@ -16,8 +16,8 @@ def third(request):
     return HttpResponse("This is page test3")
 
 
-def books(request):
-    book_list = BooksShop.objects.all()
+def bookShop(request):
+    book_list = BookShop.objects.all()
     return render(request, "books.html", {"book_list": book_list})
 
 
@@ -55,29 +55,29 @@ def add_books(request):
 
 def book_add(request):
     form = request.POST
-    books = BooksShop(title=form['book-title'], subtitle=form['book-subtitle'],
+    bookshop = BookShop(title=form['book-title'], subtitle=form['book-subtitle'],
                          description=form['book-description'], price=form['book-price'],
                          genre=form['book-genre'], author=form['book-author'], year=form['book-year'])
-    books.save()
+    bookshop.save()
 
-    return redirect(books)
+    return redirect(bookshop)
 
 
 def delete_book(request, id):
-    book = BooksShop.objects.get(id=id)
+    book = BookShop.objects.get(id=id)
     book.delete()
 
-    return redirect(books)
+    return redirect(bookShop)
 
 
 def favorite_book(request, id):
-    book = BooksShop.objects.get(id=id)
+    book = BookShop.objects.get(id=id)
     if book.is_favorite:
         book.is_favorite = False
     else:
         book.is_favorite = True
     book.save()
-    return redirect(books)
+    return redirect(bookShop)
 
 
 
