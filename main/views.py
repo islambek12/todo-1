@@ -55,10 +55,10 @@ def add_books(request):
 
 def book_add(request):
     form = request.POST
-    books = BookShop(title=form['book-title'], subtitle=form['book-subtitle'],
+    book = BookShop(title=form['book-title'], subtitle=form['book-subtitle'],
                          description=form['book-description'], price=form['book-price'],
                          genre=form['book-genre'], author=form['book-author'], year=form['book-year'])
-    books.save()
+    book.save()
 
     return redirect(books)
 
