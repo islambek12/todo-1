@@ -60,7 +60,7 @@ def book_add(request):
                          genre=form['book-genre'], author=form['book-author'], year=form['book-year'])
     book.save()
 
-    return redirect(add_books)
+    return redirect(books)
 
 
 def delete_book(request, id):
